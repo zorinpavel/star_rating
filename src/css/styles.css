@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'StarRating';
+  src: url("../font/starrating.eot?86016587");
+  src: url("../font/starrating.eot?86016587#iefix") format("embedded-opentype"), url("../font/starrating.woff2?86016587") format("woff2"), url("../font/starrating.woff?86016587") format("woff"), url("../font/starrating.ttf?86016587") format("truetype"), url("../font/starrating.svg?86016587#starrating") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'starrating';
+    src: url('../font/starrating.svg?86016587#starrating') format('svg');
+  }
+}
+*/
+[class^="isr-"]:before, [class*=" isr-"]:before {
+  font-family: 'StarRating';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased isrs size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.isr-star-empty:before {
+  content: '\e800'; }
+
+/* '' */
+.isr-star:before, .star-rating isr-star:active:before, .star-rating isr-star:hover:before, .star-rating isr-star.active:before, .star-rating isr-star.hover:before {
+  content: '\e801'; }
+
+/* '' */
+.isr-star-half:before {
+  content: '\e802'; }
+
+/* '' */
+.isr-star-half-alt:before {
+  content: '\e803'; }
+
+/* '' */
+.star-rating {
+  color: #aaaaaa; }
+  .star-rating INPUT[type="text"] {
+    opacity: 0;
+    width: 0;
+    height: 0; }
+  .star-rating .isr-star-empty {
+    width: 1.1em;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 80%; }
+    .star-rating .isr-star-empty:hover {
+      color: #333333; }
+  .star-rating isr-star {
+    width: 1.1em;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle; }
+    .star-rating isr-star.active {
+      color: #fde16d; }
+    .star-rating isr-star.hover {
+      color: #333333; }
+  .star-rating .star-caption {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 80%;
+    font-weight: bold;
+    line-height: 1;
+    white-space: nowrap;
+    background-color: #777777;
+    color: white; }
+    .star-rating .star-caption.caption-1 {
+      background-color: #d9534f; }
+    .star-rating .star-caption.caption-2 {
+      background-color: #f0ad4e; }
+    .star-rating .star-caption.caption-3 {
+      background-color: #5bc0de; }
+    .star-rating .star-caption.caption-4 {
+      background-color: #019cd4; }
+    .star-rating .star-caption.caption-5 {
+      background-color: #5cb85c; }
+
+/*# sourceMappingURL=styles.css.map */
