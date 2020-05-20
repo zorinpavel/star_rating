@@ -1,6 +1,6 @@
 <?php
 
-namespace zorinpavel\star_rating;
+namespace zorinpavel\StarRatingWidget;
 
 use yii\web\AssetBundle;
 
@@ -22,7 +22,7 @@ class StarRatingAsset extends AssetBundle {
     ];
 
     public function init() {
-//        $this->setSourcePath('@vendor/zorinpavel/star_rating');
+//        $this->setSourcePath('@vendor/zorinpavel/StarRatingWidget');
 
         parent::init();
     }

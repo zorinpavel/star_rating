@@ -1,6 +1,6 @@
 <?php
 
-use zorinpavel\star_rating\StarRatingAsset;
+use zorinpavel\StarRatingWidget\StarRatingAsset;
 
 StarRatingAsset::register($this);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace zorinpavel\star_rating;
+namespace zorinpavel\StarRatingWidget;
 
 use yii\base\Widget;
 
@@ -14,7 +14,7 @@ class StarRatingWidget extends Widget {
     public $active = true;
     public $required = false;
 
-    public $pluginName = "star_rating";
+    public $pluginName = "StarRatingWidget";
 
 
     public function init() {
