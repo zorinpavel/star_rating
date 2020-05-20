@@ -1,12 +1,12 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    var allStars = $(".star-rating").find(".star-one-click");
-    var starCaption = $(".star-rating").find(".star-caption");
-    var inputValue = $(".star-rating").find("input");
-    var captionDefault = $(".star-rating").find(".star-caption").text();
-    var captionDefaultClass = "caption-";
+    let allStars = $(".star-rating").find(".star-one-click");
+    let starCaption = $(".star-rating").find(".star-caption");
+    let inputValue = $(".star-rating").find("input");
+    let captionDefault = $(".star-rating").find(".star-caption").text();
+    let captionDefaultClass = "caption-";
 
-    $(document).ajaxComplete(function(){
+    $(document).ajaxComplete(() => {
         allStars = $(".star-rating").find(".star-one-click");
         starCaption = $(".star-rating").find(".star-caption");
         inputValue = $(".star-rating").find("input");
@@ -15,23 +15,24 @@ $(document).ready(function () {
     });
 
     $(document).on("mouseover", ".star-one-click", function(e) {
-        var index = $(this).data("index");
+        const index = $(this).data("index");
 
-        for(var i = 0; i < allStars.length; i++) {
-            var star = $(allStars[i]);
-            if(star.data("index") <= index) {
-                star.addClass("hover");
-                starCaption.text(star.data("caption"));
+        allStars.forEach((star, index) => {
+            const starElement = $(star);
+
+            if(starElement.data('index') <= index) {
+                starElement.addClass("hover");
+                starCaption.text(starElement.data("caption"));
                 starCaption.addClass("caption-" + index);
             }
-        }
+        });
     }).on("mouseout", ".star-one-click", function(e) {
-        var index = $(this).data("index");
+        const index = $(this).data("index");
 
-        for(var i = 0; i < allStars.length; i++) {
-            var star = $(allStars[i]);
-            star.removeClass("hover");
-        }
+        allStars.forEach(star => {
+            const starElement = $(star);
+            starElement.removeClass("hover");
+        });
 
         starCaption.removeClass("caption- caption-1 caption-2 caption-3 caption-4 caption-5");
         starCaption.text(captionDefault);
@@ -39,19 +40,20 @@ $(document).ready(function () {
     }).on("click", ".star-one-click", function(e) {
         e.preventDefault();
 
-        var index = $(this).data("index");
-        for(var i = 0; i < allStars.length; i++) {
-            var star = $(allStars[i]);
-            if(star.data("index") <= index) {
-                star.addClass("active");
-                starCaption.text(star.data("caption"));
+        const index = $(this).data("index");
+
+        allStars.forEach(star => {
+            const starElement = $(star);
+            if(starElement.data("index") <= index) {
+                starElement.addClass("active");
+                starCaption.text(starElement.data("caption"));
                 starCaption.addClass("caption-" + index);
-                captionDefault = star.data("caption");
+                captionDefault = starElement.data("caption");
                 captionDefaultClass = "caption-" + index;
                 inputValue.val(index);
             } else
-                star.removeClass("active");
-        }
+                starElement.removeClass("active");
+        });
     });
 
 });
