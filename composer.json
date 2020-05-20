@@ -2,6 +2,7 @@
     "name": "zorinpavel/yii2-star-rating",
     "description": "A Yii2 widget for the simple star-rating plugin with fractional rating support",
     "keywords": ["yii2", "extension", "widget", "rating", "star", "jquery", "plugin"],
+    "type": "yii2-extension",
     "homepage": "https://github.com/zorinpavel/yii2-star-rating",
     "minimum-stability": "stable",
     "license": "MIT",
@@ -13,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "zorinpavel\\StarRatingWidget\\": "src"
+            "zorinpavel\\StarRating\\": "src"
         }
     }
 }

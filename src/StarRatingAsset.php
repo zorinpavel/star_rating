@@ -1,6 +1,6 @@
 <?php
 
-namespace zorinpavel\StarRatingWidget;
+namespace zorinpavel\StarRating;
 
 use yii\web\AssetBundle;
 
