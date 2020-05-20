@@ -7,18 +7,19 @@ use yii\base\Widget;
 
 class StarRatingWidget extends Widget {
 
-    public $name, $value;
-    public $pluginOptions = array();
+    public $name, $value, $stars;
 
-    public $starCaptions = true;
-    public $active = true;
-    public $required = false;
+    public $starCaptions;
+    public $disabled;
+    public $required;
 
 
     public function init() {
+        parent::init();
 
-        if(!isset($this->pluginOptions['starCaptions']) || !is_array($this->pluginOptions['starCaptions'])) {
-            $this->pluginOptions['starCaptions'] = [
+        // TODO как сюда передать параметры?
+        if(!isset($this->starCaptions) || !is_array($this->starCaptions)) {
+            $this->starCaptions = [
                 1 => 'Крайне неудовлетворительно',
                 2 => 'Неудовлетворительно',
                 3 => 'Удовлетворительно',
@@ -27,13 +28,19 @@ class StarRatingWidget extends Widget {
             ];
         }
 
-        if(!isset($this->pluginOptions['starCaptions'][0]))
-            $this->pluginOptions['starCaptions'][0] = "Без рейтинга";
+        if(!isset($this->starCaptions[0]))
+            $this->starCaptions[0] = "Без рейтинга";
 
-        if(!isset($this->pluginOptions['stars']))
-            $this->pluginOptions['stars'] = 5;
+        if(!isset($this->stars))
+            $this->stars = 5;
 
-        return parent::init();
+        if(!isset($this->disabled))
+            $this->disabled = false;
+
+        if(!isset($this->required))
+            $this->required = false;
+
+        return true;
     }
 
 
@@ -43,9 +50,9 @@ class StarRatingWidget extends Widget {
         return $this->render('star-rating', [
             'name' => $this->name,
             'value' => $this->value,
-            'options' => $this->pluginOptions,
+            'stars' => $this->stars,
             'starCaptions' => $this->starCaptions,
-            'active' => $this->active,
+            'active' => $this->disabled,
             'required' => $this->required,
         ]);
     }

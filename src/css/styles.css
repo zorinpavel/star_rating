@@ -35,7 +35,7 @@
   /* remove if not needed */
   margin-left: .2em;
   /* you can be more comfortable with increased isrs size */
-  /* font-size: 120%; */
+  font-size: 120%;
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,7 +46,7 @@
   content: '\e800'; }
 
 /* '' */
-.isr-star:before, .star-rating isr-star:active:before, .star-rating isr-star:hover:before, .star-rating isr-star.active:before, .star-rating isr-star.hover:before {
+.isr-star:before, .star-rating .isr-star-empty.star-active:hover:before, .star-rating .isr-star-empty.star-active.hover:before, .star-rating .isr-star-empty.active:before {
   content: '\e801'; }
 
 /* '' */
@@ -68,19 +68,11 @@
     width: 1.1em;
     text-align: center;
     cursor: pointer;
-    vertical-align: middle;
-    font-size: 80%; }
-    .star-rating .isr-star-empty:hover {
-      color: #333333; }
-  .star-rating isr-star {
-    width: 1.1em;
-    text-align: center;
-    cursor: pointer;
     vertical-align: middle; }
-    .star-rating isr-star.active {
+    .star-rating .isr-star-empty.star-active:hover, .star-rating .isr-star-empty.star-active.hover {
+      color: #333333 !important; }
+    .star-rating .isr-star-empty.active {
       color: #fde16d; }
-    .star-rating isr-star.hover {
-      color: #333333; }
   .star-rating .star-caption {
     display: inline-block;
     padding: 0.25em 0.4em;

@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 
 class StarRatingAsset extends AssetBundle {
 
-    public $sourcePath = __DIR__;
+    public $sourcePath = '@vendor/zorinpavel/yii2-star-rating/src';
 
     public $css = [
         'css/styles.css?v=xxx'
@@ -22,7 +22,6 @@ class StarRatingAsset extends AssetBundle {
     ];
 
     public function init() {
-//        $this->setSourcePath('@vendor/zorinpavel/StarRatingWidget');
 
         parent::init();
     }
