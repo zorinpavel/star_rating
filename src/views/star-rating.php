@@ -1,19 +1,11 @@
-<?php
-
-use zorinpavel\StarRating\StarRatingAsset;
-
-StarRatingAsset::register($this);
-
-?>
-
-<div class="star-rating">
-    <input type="text" name="<?= $name; ?>" value="<?= $value; ?>" <?= ($required ? "required" : ""); ?> id="<?= $id; ?>">
+<div class="star-rating" id="<?= $id; ?>">
+    <input type="text" name="<?= $name; ?>" value="<?= $value; ?>" <?= ($required ? "required" : ""); ?>>
     <?php
         for($i = 1; $i <= $stars; $i++) {
             echo "<span data-index=\"$i\" data-caption=\"".$starCaptions[$i]."\" class=\"isr-star-empty";
             if($value >= $i)
                 echo " active";
-            if($active)
+            if(!$disabled)
                 echo " star-active";
             echo "\"></span>";
         }
