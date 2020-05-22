@@ -28,6 +28,10 @@ class StarRatingWidget extends Widget {
         if(!isset($this->stars))
             $this->stars = 5;
 
+        // no captions mode
+        if($this->stars > count($this->starCaptions))
+            $this->starCaptions = false;
+
         if(!isset($this->name))
             $this->name = "input-".$this->id;
 

@@ -18,7 +18,10 @@ $this->registerJs($script, View::POS_LOAD);
     <input type="text" name="<?= $name; ?>" value="<?= $value; ?>" <?= ($required ? "required" : ""); ?>>
     <?php
         for($i = 1; $i <= $stars; $i++) {
-            echo "<span data-index=\"$i\" data-caption=\"".$starCaptions[$i]."\" class=\"isr-star-empty";
+            echo "<span data-index=\"$i\"";
+            if($starCaptions)
+                echo " data-caption=\"".$starCaptions[$i]."\"";
+            echo " class=\"isr-star-empty";
             if($value >= $i)
                 echo " active";
             if(!$disabled)
