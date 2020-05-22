@@ -1,3 +1,19 @@
+<?php
+
+use yii\web\View;
+
+
+$script = <<< JS
+    $(document).ready(() => {
+        starRatingScript('$id');
+    });
+JS;
+
+$this->registerJs($script, View::POS_LOAD);
+
+?>
+
+
 <div class="star-rating" id="<?= $id; ?>">
     <input type="text" name="<?= $name; ?>" value="<?= $value; ?>" <?= ($required ? "required" : ""); ?>>
     <?php
@@ -10,7 +26,6 @@
             echo "\"></span>";
         }
         if($starCaptions) {
-            $value = $value ?: 0;
             ?><span class="star-caption caption-<?= $value; ?>"><?= $starCaptions[$value]; ?></span><?
         }
     ?>

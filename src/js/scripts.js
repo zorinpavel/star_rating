@@ -1,20 +1,21 @@
-$(document).ready(function() {
+starRatingScript = (widgetId) => {
 
-    let allStars = $(".star-rating").find(".star-active").toArray();
-    let starCaption = $(".star-rating").find(".star-caption");
-    let inputValue = $(".star-rating").find("input");
-    let captionDefault = $(".star-rating").find(".star-caption").text();
+    let widget = $("#" + widgetId);
+    let allStars = $("#" + widgetId).find(".star-active").toArray();
+    let starCaption = $("#" + widgetId).find(".star-caption");
+    let inputValue = $("#" + widgetId).find("input");
+    let captionDefault = $("#" + widgetId).find(".star-caption").text();
     let captionDefaultClass = "caption-";
 
     $(document).ajaxComplete(() => {
-        allStars = $(".star-rating").find(".star-active");
-        starCaption = $(".star-rating").find(".star-caption");
-        inputValue = $(".star-rating").find("input");
-        captionDefault = $(".star-rating").find(".star-caption").text();
+        allStars = $("#" + widgetId).find(".star-active");
+        starCaption = $("#" + widgetId).find(".star-caption");
+        inputValue = $("#" + widgetId).find("input");
+        captionDefault = $("#" + widgetId).find(".star-caption").text();
         captionDefaultClass = "caption-";
     });
 
-    $(document).on("mouseover", ".star-active", function(e) {
+    $(widget).on("mouseover", ".star-active", function(e) {
         const index = $(this).data("index");
 
         starCaption.removeClass("caption- caption-1 caption-2 caption-3 caption-4 caption-5");
@@ -59,4 +60,4 @@ $(document).ready(function() {
         });
     });
 
-});
+};

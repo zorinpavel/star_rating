@@ -28,6 +28,11 @@ class StarRatingWidget extends Widget {
         if(!isset($this->stars))
             $this->stars = 5;
 
+        if(!isset($this->name))
+            $this->name = "input-".$this->id;
+
+        $this->value = (int)$this->value;
+
         return parent::init();
     }
 
@@ -36,6 +41,7 @@ class StarRatingWidget extends Widget {
         $this->registerAssets();
 
         return $this->render('star-rating', [
+            'id' => $this->id,
             'name' => $this->name,
             'value' => $this->value,
             'stars' => $this->stars,
